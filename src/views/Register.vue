@@ -63,12 +63,7 @@
       <div class="form">
         <button type="submit" class="btn btn-warning mr-5">Register</button>
         <a href="/login">
-        <button 
-          type="button"
-          class="back-btn btn btn-danger"
-        >
-          Cancel
-        </button>
+          <button type="button" class="back-btn btn btn-danger">Cancel</button>
         </a>
       </div>
     </form>
@@ -76,32 +71,54 @@
 </template>
 
 <script>
-import axios from '../axios/server'
+import axios from "../axios/server";
+import swal from "sweetalert"
 export default {
-    name: 'register',
-    data(){
-        return{
-            user:{
-                firstName:"",
-                lastName:"",
-                email:"",
-                password:"",
-                phoneNumber:""
-            }
-        }
+  name: "register",
+  data() {
+    return {
+      user: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        phoneNumber: "",
+      },
+    };
+  },
+  methods: {
+    registerButton() {
+      axios({
+        url: "/register",
+        method: "post",
+        data: {
+          firstName: this.user.firstName,
+          lastName: this.user.lastName,
+          email: this.user.email,
+          password: this.user.password,
+          phoneNumber: this.user.phoneNumber,
+        },
+      })
+      .then(()=>{
+          swal({
+            title: "Good job!",
+            text: "You have been registered",
+            icon: "success",
+          });
+          this.$router.push('/login')
+        })
+        .catch((err)=>{
+          swal({
+            title: `${err.response.status}`,
+            text: `${err.response.data[0]}`,
+            icon: "error",
+          });
+          console.log(err.response)
+        })
     },
-    methods:{
-        registerButton(){
-            axios({
-               url:'/register',
-               method:'post'
-            })
-        }
-    }
-
-}
+  },
+};
 </script>
 
 <style>
-
 </style>

@@ -4,7 +4,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text">Price: {{ product.price }}</p>
-      <a @click="addCart(product)" class="btn btn-primary">Buy Now</a>
+      <a @click="addCart(product)" class="btn btn-primary">Add To Cart</a>
     </div>
   </div>
 </template>

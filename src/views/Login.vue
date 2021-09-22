@@ -98,12 +98,13 @@ name:'login',
       })
     },
     onSuccess(googleUser) {
+      // console.log(googleUser$b.id_token);
       // console.log(googleUser.Zb.id_token);
       // this.$emit("idToken", googleUser.Zb.id_token)
       axios({
-        url: `/customers/authGoogle`,
+        url: `/authGoogle`,
         method: "post",
-        data: { idToken: googleUser.Zb.id_token },
+        data: { idToken: googleUser.$b.id_token },
       })
         .then((res) => {
           localStorage.setItem("access_token", res.data.access_token);
@@ -116,6 +117,7 @@ name:'login',
       // console.log(googleUser.getBasicProfile());
     },
     onFailure() {},
+
   }
 }
 </script>

@@ -17,14 +17,9 @@
                         <div class="row mt-3">
                             <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
                             <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
-                            <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter Postcode" value=""></div>
                             <div class="col-md-12"><label class="labels">Province</label><input type="text" class="form-control" placeholder="enter Province" value=""></div>
                             <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" placeholder="City" value=""></div>
                             <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter Email" value=""></div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                            <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                         </div>
                         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                     </div>
