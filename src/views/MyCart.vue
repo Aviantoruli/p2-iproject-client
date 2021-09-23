@@ -35,16 +35,18 @@
         </tr>
       </tbody>
     </table>
-    
+    <HFooter id="footer"></HFooter>
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import HFooter from 'vue-hacktiv8-footer'
 export default {
   name: "myCard",
   components: {
     Navbar,
+    HFooter
   },
   computed: {
     products() {
@@ -73,6 +75,13 @@ export default {
   width: 100%;
   margin: auto;
   padding: 20px;
+}
+
+#footer{
+  position: fixed;
+  bottom: 0;
+  width: 98%;
+  margin-top: 500px;
 }
 
 h1 {

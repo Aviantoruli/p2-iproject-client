@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Hackshoe</a>
+      <a class="navbar-brand" href="/"> <img src="../assets/shoes.png" alt="" width="40px" height="40px" > Hackshoe</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -24,7 +24,19 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click.prevent="goCart">Cart</a>
+            <a class="nav-link" type="button" @click.prevent="goCart">Cart <span
+                class="
+                  position-absolute
+                  start-40
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-danger
+                "
+              >
+                {{carts}}
+                <span class="visually-hidden">unread messages</span>
+              </span> </a>
           </li>
         </ul>
         <form class="d-flex">
@@ -43,7 +55,9 @@
             Search
           </button>
         </form>
-        <a class="nav-link active" @click="LogoutBtn" aria-current="page">Logout</a>
+        <a class="nav-link active" @click="LogoutBtn" aria-current="page"
+          >Logout</a
+        >
       </div>
     </div>
   </nav>
@@ -68,11 +82,16 @@ export default {
       this.$store.commit("FILTERTITLE", this.name);
       this.$store.dispatch("productFetch");
     },
-    LogoutBtn(){
-      localStorage.clear()
-      this.$router.push('/login')
-    }
+    LogoutBtn() {
+      localStorage.clear();
+      this.$router.push("/login");
+    },
   },
+  computed:{
+    carts(){
+      return this.$store.state.carts.length
+    }
+  }
 };
 </script>
 
