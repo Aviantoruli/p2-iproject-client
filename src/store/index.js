@@ -48,18 +48,9 @@ export default new Vuex.Store({
       .then((res)=>{
         console.log(res.data)
         window.snap.pay(res.data.token)
-        // return axios({
-        //   url:'/users/orders/done',
-        //   method:'post',
-        //   headers:{access_token: localStorage.getItem("access_token")},
-        //   data:{
-        //     OrderId: res.data.orderId
-        //   }
-        // })
+        
       })
-      // .then((res)=>{
-      //   console.log(res)
-      // })
+      
       .catch((err)=>{
         console.log(err)
       })

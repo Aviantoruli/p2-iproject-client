@@ -1,0 +1,38 @@
+[debug] [2021-09-23T04:42:51.351Z] ----------------------------------------------------------------------
+[debug] [2021-09-23T04:42:51.354Z] Command:       /usr/bin/node /usr/bin/firebase projects:create hackshoe
+[debug] [2021-09-23T04:42:51.354Z] CLI Version:   9.17.0
+[debug] [2021-09-23T04:42:51.354Z] Platform:      linux
+[debug] [2021-09-23T04:42:51.354Z] Node Version:  v16.9.1
+[debug] [2021-09-23T04:42:51.357Z] Time:          Thu Sep 23 2021 11:42:51 GMT+0700 (Western Indonesia Time)
+[debug] [2021-09-23T04:42:51.357Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-09-23T04:42:51.359Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-09-23T04:42:51.383Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-09-23T04:42:51.383Z] > authorizing via signed-in user (aviantoandriano@gmail.com)
+[debug] [2021-09-23T04:42:52.382Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-09-23T04:42:52.383Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-09-23T04:42:56.174Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-09-23T04:42:56.174Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-23T04:43:01.308Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 23 Sep 2021 04:43:01 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-23T04:43:01.323Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"hackshoe","name":"y"}
+[debug] [2021-09-23T04:43:02.415Z] <<< HTTP RESPONSE 400 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Thu, 23 Sep 2021 04:43:02 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=961","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-23T04:43:02.416Z] <<< HTTP RESPONSE BODY {"error":{"code":400,"message":"field [display_name] has issue [project display name must be at least 4 characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"display_name","description":"project display name must be at least 4 characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2021-09-23T04:43:02.420Z] FirebaseError: HTTP Error: 400, field [display_name] has issue [project display name must be at least 4 characters]
+    at module.exports (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/usr/lib/node_modules/firebase-tools/lib/api.js:41:35)
+    at Request.self.callback (/usr/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:394:28)
+    at Request.emit (node:domain:475:12)
+    at Request.<anonymous> (/usr/lib/node_modules/firebase-tools/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:394:28)
+    at Request.emit (node:domain:475:12)
+    at IncomingMessage.<anonymous> (/usr/lib/node_modules/firebase-tools/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:513:28)
+    at IncomingMessage.emit (node:events:406:35)
+    at IncomingMessage.emit (node:domain:475:12)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
